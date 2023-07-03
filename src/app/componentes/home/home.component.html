@@ -1,0 +1,10 @@
+<div class="container">
+    <form class="form" name="data" #data [formGroup]="formulario">
+        <input  #titulo class="tarea" formControlName="titulo" placeholder="TAREA">
+        <input #descripcion class="descripcion" formControlName="descripcion" placeholder="DESCRIPCION">
+        <button #buton id="boton" type="reset" (click)="submit()">Ingresar</button>
+    </form> 
+</div>
+
+<!-- <button (click)="logout()"></button> -->
+<app-works-list [correcto]="correcto" [boton]="boton" [datos]="datos"></app-works-list>

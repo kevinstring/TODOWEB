@@ -1,0 +1,8 @@
+<form [formGroup]="formLog">
+    <input name="usuario" #usuario placeholder="usuario" formControlName="usuario">
+    <input name="contrasena" #contrasena placeholder="contrasena" formControlName="contrasena">
+    <button (click)="ingresar()">login</button>
+    <button (click)="logout()">Logout</button>
+</form>
+<p>{{error}}</p>
+<p>{{creado}}</p>

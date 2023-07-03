@@ -1,1 +1,178 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    font-family: 'Roboto', sans-serif;
+
+    background-color: rgba(248, 250, 244, 0.935);
+}
+.container{
+    margin: auto;
+    background-color: rgba(74, 136, 235, 0.666);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 70vw;
+}
+
+.form{
+    background-color: rgba(255, 255, 255, 0.29);
+    height: 30vh;
+    width: 98vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+}
+input{
+
+    border-radius: 5px;
+    border: none;
+
+}
+.tarea{
+    width: 200px;
+    height: 30px;
+
+}
+
+.descripcion{
+    width: 340px;
+    height: 80px;
+}
+
+button{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(0, 229, 255, 0.812);
+    color: rgb(234, 234, 234);
+    font-size: medium;
+    transition: .5s;
+    
+}
+
+button:hover{
+    background-color:rgba(13, 139, 153, 0.301) ;
+}
+button:active{
+    background-color: rgba(1, 89, 101, 0.396);
+}
+
+.tareasContainer{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    height:auto;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    
+    
+}
+
+.tareas{
+    margin: auto;
+    width: 70vw;
+    background-color: rgba(33, 255, 255, 0.308);
+    display: grid;
+
+    grid-template-columns: 3fr 4fr 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-items: baseline;
+    animation-name: salir;
+    grid-auto-flow: column;
+
+}
+.estatus{
+    margin: auto;
+    width: 70vw;
+    margin-top: 20px;
+    background-color: rgba(0, 132, 255, 0.521);
+    font-size: medium;
+    display: grid;
+    grid-template-columns: 3fr 4fr 1.5fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+
+
+}
+
+.eliminar{
+    width: 100px;
+    background-color: red;
+}
+.editar{
+    width: 100px;
+}
+
+.divDelete{
+    background-color: rgba(0, 0, 255, 0.554);
+    position: absolute;
+    top:100px;
+    left: 80%;
+    width: 300px;
+    height: 100px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: salir;
+    animation-duration: 0.5s;
+}
+
+.divEditar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(255, 0, 0);
+    height: 30vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+   
+}
+
+
+@keyframes salir{
+    from{
+        transform:translateY(-100%);
+        
+
+    }
+    to{
+        transform:translateY(0%);
+        
+    }
+}
+
+@keyframes desvanecer {
+    from{
+        transform: rotate(4px);
+
+    }
+    to{
+
+        transform:translateX(100%);
+        
+    }
+}
+
+.tareaReal{
+    margin: auto;
+    width: 400px;
+    border: 1px solid white;
+}
+
+.divContainerTareasRealizadas{
+    margin-top: 100px;
+}

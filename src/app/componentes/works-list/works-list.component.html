@@ -1,0 +1,47 @@
+
+<div class="estatus"  ><p>TAREAS</p><p>DESCRIPCION</p><p>EDITAR</p></div>
+<div class="tareasContainer" >
+ 
+   <div class="tareas"  *ngFor="let i of datos |pipes:numero" [ngStyle]="{'animation-name':'salir;','animation-duration':'0.5s'}">
+    <p><b>{{i.titulo}}</b> </p> <p>{{i.descripcion}}</p>
+     <button #delete name="delete" class="eliminar" (click)="eliminar(i.id)" ><span class="material-symbols-outlined">
+        Eliminar
+        </span></button>
+
+
+      <button class="editar"(click)="edit(i.titulo,i.descripcion,i.id)" ><span class="material-symbols-outlined">
+        editar
+        </span></button>
+      <button style="background-color: rgb(71, 174, 71);" (click)="realizada(i.id)">
+          Realizada
+      </button>
+      
+      </div>
+      
+      <div class="divEditar"   style="display:{{cerrarEditar}} " [ngStyle]="{'animation-duration':'0.5s'}"> <form class="form" name="data" #data [formGroup]="formulario">
+        <input  #titulo class="tarea" formControlName="titulo">
+        <input #descripcion class="descripcion" formControlName="descripcion">
+        <button #buton id="boton" type="reset" (click)="editar()">Editar</button>
+        <button (click)="cerrar()">Cerrar</button>
+      </form></div>
+    <div    class="divDelete" *ngIf="correcto" style="display:{{salir}}"><p>Eliminado Correctamente</p></div>
+    <div style="margin:auto">
+      <button (click)="atras()" style="width: 100px;">Atras</button>
+   
+      <button [disabled]="(datos|pipes:numero).length===0" style="width: 100px;"  (click)="siguiente()">Siguiente</button>
+    </div>
+</div>
+<div class="divContainerTareasRealizadas">
+<h2 style="text-align: center;">Tareas Realizadas</h2>
+<div class="estatus tareaReal"  ><p>FECHA</p><p>TAREA</p><p>DESCRIPCION</p></div>
+<div class="tareas tareaReal" *ngFor="let a of tareasRealizadas">
+
+    <p>{{ a.fecha | date:'MMM/d/  HH:mm' }}</p>
+    <p>{{ a.titulo }}</p> 
+    <p>{{ a.descripcion }}</p>
+  </div>
+</div>
+
+
+
+
